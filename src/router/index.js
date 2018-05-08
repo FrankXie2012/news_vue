@@ -6,17 +6,17 @@ import Detail from '@/components/Detail'
 Vue.use(Router)
 
 export default new Router({
-  routes: [{
-    path: '/',
-    name: 'index',
-    component: Index
-  }, {
-    path: '/index',
-    name: 'index',
-    component: Index
-  }, {
-    path: '/detail',
-    name: 'detail',
-    component: Detail
-  }]
+	routes: [{
+		path: '/',
+		name: 'index',
+		component: Index
+	}, {
+		path: '/index',
+		name: 'index',
+		component: Index
+	}, {
+		path: '/detail',
+		name: 'detail',
+		component: Detail
+	}]
 });

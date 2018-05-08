@@ -14,7 +14,8 @@
 					<div class="star-div">
 						<el-button type="primary"
 						    size="mini"
-						    icon="el-icon-star-off">
+						    icon="el-icon-star-off"
+						    @click="starPost">
 							<span>{{post.starCount || 0}}</span>
 						</el-button>
 					</div>
@@ -56,6 +57,13 @@ export default {
 		this.id = this.$route.query.id;
 		this.post = JSON.parse(localStorage.getItem(this.id));
 		this.comments = JSON.parse(localStorage.getItem(`${this.id}-comments`));
+	},
+	methods: {
+		starPost() {
+			if (!this.post.starCount) this.post.starCount = 0;
+			this.$data.post.starCount++;
+			this.$data.post = Object.assign({}, this.$data.post);
+		}
 	}
 }
 </script>
